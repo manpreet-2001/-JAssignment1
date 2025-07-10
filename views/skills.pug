@@ -1,0 +1,18 @@
+
+extends layout
+
+block content
+  h1 Manage Skills
+  form(action="/admin/skills/add", method="POST")
+    input(type="text", name="name", placeholder="Skill Name", required)
+    input(type="text", name="level", placeholder="Level (e.g. Advanced)", required)
+    input(type="number", name="order", placeholder="Order", required)
+    button(type="submit") Add Skill
+
+  ul
+    each skill in skills
+      li
+        strong= skill.name
+        |  - #{skill.level}
+        form(action=`/admin/skills/delete/${skill._id}`, method="POST")
+          button(type="submit") Delete

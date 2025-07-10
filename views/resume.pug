@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Manpreet Singh - Resume
+    link(rel="stylesheet", href="/css/style.css")
+    style.
+      .resume-header {
+        background: #004466;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+      .section {
+        margin: 2rem 0;
+      }
+      .section h2 {
+        border-bottom: 2px solid #004466;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .experience-item, .skill-item {
+        margin-bottom: 1rem;
+      }
+      .skill-level {
+        font-style: italic;
+        color: gray;
+      }
+  body
+    .resume-header
+      h1 Manpreet Singh
+      p Full Stack Developer | Node.js | MongoDB | React | AWS
+      p Email: manpreet123singh987@gmail.com | LinkedIn: linkedin.com/in/yourprofile
+
+    .container
+      .section
+        h2 Experiences
+        each exp in experiences
+          .experience-item
+            h3= exp.title
+            p= exp.description
+
+      .section
+        h2 Skills
+        ul
+          each skill in skills
+            li.skill-item
+              strong= skill.name
+              span.skill-level &nbsp; (#{skill.level})

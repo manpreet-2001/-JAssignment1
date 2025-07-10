@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Admin Dashboard
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    nav.navbar
+      a(class=activePage === 'experiences' ? 'active' : '', href="/admin/experiences") Experiences
+      a(class=activePage === 'skills' ? 'active' : '', href="/admin/skills") Skills
+      a(href="/resume", target="_blank") View Resume
+    .container
+      block content
